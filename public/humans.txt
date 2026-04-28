@@ -1,0 +1,36 @@
+__  __  __
+\ \ \ \ \/
+ \ \/\ \
+  \/  \/
+
+The humans.txt file explains the team, technology,
+and graphic assets behind this site humanstxt.org.
+
+_______________________________________________________________________________
+
+ENGINEER
+
+Joshua Shin
+Full-stack & platform engineering
+
+Contact:
+mrjoshua293@gmail.com
++1 737-710-1577
+https://www.linkedin.com/in/joshuashin1
+
+Jersey City, NJ 07302
+
+_______________________________________________________________________________
+
+TECHNOLOGY
+
+React
+Remix
+Three.js
+Framer Motion
+
+_______________________________________________________________________________
+
+FONTS
+
+Gotham

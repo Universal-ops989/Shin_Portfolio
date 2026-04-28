@@ -1,0 +1,177 @@
+.inner {
+  max-width: var(--maxWidthL);
+  margin: 0 auto;
+  width: 100%;
+}
+
+.capWrap {
+  padding-top: var(--space4XL);
+  padding-bottom: var(--space3XL);
+}
+
+.expWrap {
+  padding-top: var(--space2XL);
+  padding-bottom: var(--space5XL);
+}
+
+.eyebrow {
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: var(--spaceM);
+  opacity: 0;
+  transition: opacity var(--durationXL) ease var(--durationS);
+}
+
+.title {
+  margin-bottom: var(--spaceL);
+  color: var(--textTitle);
+  font-size: clamp(var(--fontSizeH4), 4vw, var(--fontSizeH3));
+  line-height: var(--lineHeightTitle);
+  max-width: 22ch;
+  opacity: 0;
+  transition: opacity var(--durationXL) ease var(--durationM);
+}
+
+.lead {
+  margin-bottom: var(--space2XL);
+  max-width: 52ch;
+  opacity: 0;
+  transition: opacity var(--durationXL) ease var(--durationL);
+}
+
+.tagGrid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spaceS);
+  opacity: 0;
+  transition: opacity var(--durationXL) ease var(--durationXL);
+}
+
+.cardTrack {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  max-width: 720px;
+  margin: 0 auto;
+  gap: 0;
+  opacity: 0;
+  transition: opacity var(--durationXL) ease var(--durationXL);
+}
+
+.cardBridge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: var(--spaceM) 0;
+  flex-shrink: 0;
+}
+
+.bridgeNode {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  opacity: 0.75;
+  box-shadow: 0 0 0 1px color-mix(in lab, var(--primary) 25%, transparent);
+}
+
+.tag {
+  padding: var(--spaceS) var(--spaceM);
+  border-radius: 10px;
+  background-color: var(--backgroundLight);
+  color: var(--text);
+  font-size: var(--fontSizeBodyS);
+  font-weight: var(--fontWeightMedium);
+  line-height: 1.3;
+  border: 1px solid color-mix(in lab, var(--text) 8%, transparent);
+}
+
+.card {
+  padding: var(--spaceL);
+  border-radius: 14px;
+  background-color: var(--backgroundLight);
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spaceM);
+  min-height: 0;
+}
+
+.cardTop {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--spaceS);
+}
+
+.company {
+  font-weight: var(--fontWeightBold);
+  color: var(--textTitle);
+  font-size: var(--fontSizeBodyM);
+  line-height: 1.25;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.datePill {
+  flex: 0 0 auto;
+  font-size: var(--fontSizeBodyXS);
+  font-weight: var(--fontWeightMedium);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--textBody);
+  background: color-mix(in lab, var(--text) 10%, transparent);
+  padding: var(--spaceXS) var(--spaceS);
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.role {
+  margin: 0;
+  font-size: var(--fontSizeBodyS);
+  color: var(--textBody);
+  line-height: var(--lineHeightBody);
+}
+
+.cardList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spaceS);
+}
+
+.cardListItem {
+  position: relative;
+  padding-left: 1.1em;
+  font-size: var(--fontSizeBodyS);
+  color: var(--textBody);
+  line-height: var(--lineHeightBody);
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--primary);
+  }
+}
+
+[data-visible='true'] .eyebrow,
+[data-visible='true'] .title,
+[data-visible='true'] .lead,
+[data-visible='true'] .tagGrid,
+[data-visible='true'] .cardTrack {
+  opacity: 1;
+}

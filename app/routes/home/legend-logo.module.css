@@ -1,0 +1,69 @@
+.root {
+  width: 100%;
+  max-width: min(400px, 100%);
+  margin-inline: auto;
+  opacity: 0;
+  transition: opacity var(--durationXL) ease var(--durationM);
+}
+
+.root[data-visible='true'] {
+  opacity: 1;
+}
+
+.svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+
+.cape {
+  fill: color-mix(in lab, var(--accent) 32%, var(--background));
+}
+
+.capeInner {
+  fill: color-mix(in lab, var(--accent) 18%, transparent);
+}
+
+.body {
+  fill: var(--textTitle);
+}
+
+.head {
+  fill: color-mix(in lab, var(--textTitle) 88%, var(--background));
+}
+
+.hair {
+  fill: var(--textTitle);
+}
+
+.eye {
+  fill: var(--background);
+}
+
+.pupil {
+  fill: var(--textTitle);
+}
+
+.cheek {
+  fill: color-mix(in lab, var(--accent) 45%, transparent);
+  opacity: 0.9;
+}
+
+.mouth {
+  fill: none;
+  stroke: var(--textTitle);
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.star {
+  fill: var(--accent);
+}
+
+.starStroke {
+  fill: none;
+  stroke: var(--textTitle);
+  stroke-width: 2;
+  stroke-linejoin: round;
+}
