@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: shin-portfolio
+    env: node
+    plan: free
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: 18
+      - key: SESSION_SECRET
+        generateValue: true

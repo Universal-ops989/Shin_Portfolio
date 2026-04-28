@@ -8,19 +8,16 @@
   "scripts": {
     "build": "remix vite:build",
     "dev": "node ./scripts/dev.cjs && remix vite:dev",
-    "start": "remix vite:dev",
+    "start": "remix-serve ./build/server/index.js",
     "postinstall": "node ./scripts/draco.cjs",
-    "deploy": "vercel deploy",
-    "deploy:prod": "vercel deploy --prod",
     "dev:storybook": "storybook dev -p 6006",
-    "build:storybook": "storybook build",
-    "deploy:storybook": "vercel deploy ./storybook-static"
+    "build:storybook": "storybook build"
   },
   "dependencies": {
     "@mdx-js/react": "^3.0.1",
     "@remix-run/react": "^2.7.1",
     "@remix-run/node": "^2.7.1",
-    "@vercel/remix": "^2.3.0",
+    "@remix-run/serve": "^2.7.1",
     "framer-motion": "11.0.5",
     "isbot": "^4.1.0",
     "react": "^18.2.0",
