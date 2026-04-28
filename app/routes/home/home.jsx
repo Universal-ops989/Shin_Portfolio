@@ -56,6 +56,7 @@ export const Home = () => {
   const projectThree = useRef();
   const resumeShowcase = useRef();
   const details = useRef();
+  const visibleSetRef = useRef(new Set());
 
   useEffect(() => {
     const sections = [intro, projectOne, projectTwo, projectThree, resumeShowcase, details];
@@ -66,7 +67,8 @@ export const Home = () => {
           if (entry.isIntersecting) {
             const section = entry.target;
             observer.unobserve(section);
-            if (visibleSections.includes(section)) return;
+            if (visibleSetRef.current.has(section)) return;
+            visibleSetRef.current.add(section);
             setVisibleSections(prevSections => [...prevSections, section]);
           }
         });
@@ -91,7 +93,7 @@ export const Home = () => {
       sectionObserver.disconnect();
       indicatorObserver.disconnect();
     };
-  }, [visibleSections]);
+  }, []);
 
   return (
     <div className={styles.home}>
