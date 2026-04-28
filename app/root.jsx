@@ -133,7 +133,6 @@ export default function App() {
           </main>
         </ThemeProvider>
         <ScrollRestoration />
-        <Scripts />
         <script
           // Remix hydration expects __remixContext.url, but some runtimes omit it.
           // Patch it from the current location to prevent reload loops.
@@ -142,6 +141,7 @@ export default function App() {
               "window.__remixContext && window.__remixContext.url == null && (window.__remixContext.url = window.location.pathname);",
           }}
         />
+        <Scripts />
       </body>
     </html>
   );
