@@ -134,11 +134,13 @@ export default function App() {
         </ThemeProvider>
         <ScrollRestoration />
         <script
-          // Remix hydration expects __remixContext.url, but some runtimes omit it.
-          // Patch it from the current location to prevent reload loops.
+          // Remix hydration expects `window.__remixContext.url` to exist.
+          // Some runtimes omit it, which causes a reload loop on hydration.
+          // Define a setter before <Scripts /> runs so we can patch the value
+          // at the moment Remix assigns `window.__remixContext`.
           dangerouslySetInnerHTML={{
             __html:
-              "window.__remixContext && window.__remixContext.url == null && (window.__remixContext.url = window.location.pathname);",
+              "(() => { try { const key = '__remixContext'; const storeKey = '__remixContextValue'; if (Object.prototype.hasOwnProperty.call(window, storeKey)) return; Object.defineProperty(window, key, { configurable: true, get() { return window[storeKey]; }, set(v) { try { if (v && v.url == null) v.url = window.location.pathname; } catch {} window[storeKey] = v; } }); } catch {} })();",
           }}
         />
         <Scripts />
